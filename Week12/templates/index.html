@@ -139,20 +139,20 @@
 </head>
 <body>
     <script>
-        fetch('https://api.apify.org?format=json')
-        .then(response=>response.json())
-        .then(data =>{
-            fetch('http://localhost/api/visitors', { 
-            method: 'POST',
-            HEADERS:{
-                'content-Type': 'application/json',
-            },
-            body:JSON.stringify({ip:data.ip}),
-        });
-    })
-   .catch(error=>console.error('Error:',error));
-   </script>
-<header>
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                fetch('http://localhost/api/vistors', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ ip: data.ip }),
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+    <header>
         <h1>My Portfolio</h1>
     </header>
 
@@ -210,3 +210,4 @@
 
 </body>
 </html>
+
